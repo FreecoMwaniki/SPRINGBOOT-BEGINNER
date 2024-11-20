@@ -1,6 +1,8 @@
 package com.example.CRUD;
 
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,8 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import com.example.CRUD.Books;
-import com.example.CRUD.BooksService;
+
 @RestController
 public class BooksController
 {
@@ -22,7 +23,7 @@ public class BooksController
         return booksService.getAllBooks();
     }
     @GetMapping("/book/{bookid}")
-    private Books getBooks(@PathVariable("bookid") int bookid)
+    private Optional<Books> getBooks(@PathVariable("bookid") int bookid)
     {
         return booksService.getBooksById(bookid);
     }
