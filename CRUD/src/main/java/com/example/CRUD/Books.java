@@ -26,6 +26,9 @@ public class Books
     @Column
     private int price;
 
+    public void setId(int bookid) {
+    }
+
 
     //if using a constructor use method shown below
 //    public class Books(int bookid,String bookname, String author,int price){
